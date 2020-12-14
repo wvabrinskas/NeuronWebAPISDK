@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SimpleApiClient",
+        "repositoryURL": "https://github.com/wvabrinskas/SimpleAPIClient.git",
+        "state": {
+          "branch": null,
+          "revision": "e492f3a586c26a6e958fa746b8da62a71a7da9f2",
+          "version": "1.0.11"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

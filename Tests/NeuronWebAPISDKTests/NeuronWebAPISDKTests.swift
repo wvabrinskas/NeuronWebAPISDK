@@ -1,12 +1,11 @@
 import XCTest
-@testable import NeuronWeAPISDK
+@testable import NeuronWebAPISDK
 
-final class NeuronWeAPISDKTests: XCTestCase {
+final class NeuronWebAPISDKTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(NeuronWeAPISDK().text, "Hello, World!")
     }
 
     static var allTests = [
