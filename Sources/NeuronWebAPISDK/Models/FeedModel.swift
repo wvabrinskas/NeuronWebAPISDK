@@ -10,4 +10,8 @@ import Foundation
 
 public struct FeedModel: Codable {
   public var inputs: [Float]
+  
+  public init(inputs: [Float]) {
+    self.inputs = inputs
+  }
 }

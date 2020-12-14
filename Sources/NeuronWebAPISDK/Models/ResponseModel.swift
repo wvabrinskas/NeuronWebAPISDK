@@ -12,4 +12,10 @@ public struct ResponseModel<T: Codable>: Codable {
   public var status: Bool
   public var error: String? = nil
   public var result: T?
+  
+  public init(status: Bool, error: String? = nil, result: T?) {
+    self.status = status
+    self.error = error
+    self.result = result
+  }
 }

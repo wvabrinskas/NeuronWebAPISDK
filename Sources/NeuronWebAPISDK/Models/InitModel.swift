@@ -19,4 +19,18 @@ public struct InitModel: Codable {
   public var learningRate: Float
   public var bias: Float
   public var activation: ActivationMode
+  
+  public init(inputs: Int,
+              outputs: Int,
+              hiddenLayers: Int?,
+              learningRate: Float,
+              bias: Float,
+              activation: ActivationMode) {
+    self.inputs = inputs
+    self.outputs = outputs
+    self.hiddenLayers = hiddenLayers
+    self.learningRate = learningRate
+    self.bias = bias
+    self.activation = activation
+  }
 }
