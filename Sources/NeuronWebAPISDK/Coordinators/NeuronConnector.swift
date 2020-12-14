@@ -21,15 +21,12 @@ public enum Endpoint: String {
 
 public protocol NeuronConnector: SimpleApiClient, Logger {
   var serverUrl: String { get set }
-  
-  func execute<T: Codable, TResult: Codable>(model: T,
-                                             _ endpoint: Endpoint,
-                                             complete: ((_ result: TResult?) -> ())?)
+  func execute<T: Codable, TResult: Codable>(model: T, _ endpoint: Endpoint, complete: ((_ result: TResult?) -> ())?)
 }
 
 extension NeuronConnector {
   
-  func execute<T: Codable, TResult: Codable>(model: T, _ endpoint: Endpoint, complete: ((_ result: TResult?) -> ())? = nil) {
+  func execute<T: Codable, TResult: Codable>(model: T, _ endpoint: Endpoint, complete: ((_ result: TResult?) -> ())?) {
     do {
       let data = try JSONEncoder().encode(model)
       
