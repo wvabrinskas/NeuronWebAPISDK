@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct FeedModel: Codable {
-  var inputs: [Float]
+public struct FeedModel: Codable {
+  public var inputs: [Float]
 }

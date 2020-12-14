@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct TrainingModel: Codable {
-  var inputs: [Float]
-  var correct: [Float]
+public struct TrainingModel: Codable {
+  public var inputs: [Float]
+  public var correct: [Float]
 }
 
-struct MasterTrainingModel: Codable {
-  var trainingData: [TrainingModel]
-  var count: Int
+public struct MasterTrainingModel: Codable {
+  public var trainingData: [TrainingModel]
+  public var count: Int
 }

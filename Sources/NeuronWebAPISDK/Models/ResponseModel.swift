@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ResponseModel<T: Codable>: Codable {
+public struct ResponseModel<T: Codable>: Codable {
   public var status: Bool
   public var error: String? = nil
   public var result: T?
