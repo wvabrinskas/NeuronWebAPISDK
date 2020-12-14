@@ -20,9 +20,7 @@ public enum Endpoint: String {
 }
 
 public protocol NeuronConnector: SimpleApiClient, Logger {
-  
-  var baseUrl: String { get set }
-  var logLevel: LogType { get set }
+  var serverUrl: String { get set }
   
   func execute<T: Codable, TResult: Codable>(model: T,
                                              _ endpoint: Endpoint,
@@ -35,7 +33,7 @@ extension NeuronConnector {
     do {
       let data = try JSONEncoder().encode(model)
       
-      self.post(endpoint: endpoint.build(self.baseUrl),
+      self.post(endpoint: endpoint.build(self.serverUrl),
                 headers: [:], data: data) { (data, response, error) in
         do {
           let responseData: ResponseModel<TResult>? = try self.decode(data: data)
