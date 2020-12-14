@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct NeuroModel: Codable {
+public enum ActivationMode: String, Codable {
+  case reLu, sigmoid, leakyReLu
+}
+
+struct InitModel: Codable {
   var inputs: Int
   var outputs: Int
   var hiddenLayers: Int?
   var learningRate: Float
   var bias: Float
+  var activation: ActivationMode
 }
