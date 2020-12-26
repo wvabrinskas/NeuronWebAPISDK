@@ -12,25 +12,35 @@ public enum ActivationMode: String, Codable {
   case reLu, sigmoid, leakyReLu
 }
 
-public struct InitModel: Codable {
-  public var inputs: Int
-  public var outputs: Int
-  public var hiddenLayers: Int?
-  public var learningRate: Float
-  public var bias: Float
-  public var activation: ActivationMode
-  
+public enum LossFunctionMode: String, Codable {
+  case meanSquareLoss
+}
+
+struct InitModel: Codable {
+  var inputs: Int
+  var outputs: Int
+  var hiddenLayers: Int?
+  var learningRate: Float
+  var bias: Float
+  var activation: ActivationMode
+  var lossFunction: LossFunctionMode
+  var lossThreshold: Float
+
   public init(inputs: Int,
               outputs: Int,
               hiddenLayers: Int?,
               learningRate: Float,
               bias: Float,
-              activation: ActivationMode) {
+              activation: ActivationMode,
+              lossFunction: LossFunctionMode,
+              lossThreshold: Float) {
     self.inputs = inputs
     self.outputs = outputs
     self.hiddenLayers = hiddenLayers
     self.learningRate = learningRate
     self.bias = bias
     self.activation = activation
+    self.lossFunction = lossFunction
+    self.lossThreshold = lossThreshold
   }
 }
