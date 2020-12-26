@@ -16,7 +16,7 @@ public enum LossFunctionMode: String, Codable {
   case meanSquareLoss
 }
 
-struct InitModel: Codable {
+public struct InitModel: Codable {
   var inputs: Int
   var outputs: Int
   var hiddenLayers: Int?
