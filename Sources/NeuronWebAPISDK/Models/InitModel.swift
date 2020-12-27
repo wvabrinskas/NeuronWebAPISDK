@@ -23,6 +23,11 @@ public enum ModifierMode: String, Codable {
 public struct Layer: Codable {
   public var nodes: Int
   public var activation: ActivationMode
+  
+  public init(nodes: Int, activation: ActivationMode) {
+    self.nodes = nodes
+    self.activation = activation
+  }
 }
 
 public struct InitModel: Codable {
