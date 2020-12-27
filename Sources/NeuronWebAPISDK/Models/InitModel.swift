@@ -16,31 +16,38 @@ public enum LossFunctionMode: String, Codable {
   case meanSquareLoss
 }
 
+public enum ModifierMode: String, Codable {
+  case softmax
+}
+
+public struct Layer: Codable {
+  public var nodes: Int
+  public var activation: ActivationMode
+}
+
 public struct InitModel: Codable {
-  var inputs: Int
-  var outputs: Int
-  var hiddenLayers: Int?
+  var layers: [Layer]
   var learningRate: Float
   var bias: Float
   var activation: ActivationMode
   var lossFunction: LossFunctionMode
   var lossThreshold: Float
+  var modifier: ModifierMode
 
-  public init(inputs: Int,
-              outputs: Int,
-              hiddenLayers: Int?,
+  public init(layers: [Layer],
               learningRate: Float,
               bias: Float,
               activation: ActivationMode,
               lossFunction: LossFunctionMode,
-              lossThreshold: Float) {
-    self.inputs = inputs
-    self.outputs = outputs
-    self.hiddenLayers = hiddenLayers
+              lossThreshold: Float,
+              modifier: ModifierMode) {
+ 
+    self.layers = layers
     self.learningRate = learningRate
     self.bias = bias
     self.activation = activation
     self.lossFunction = lossFunction
     self.lossThreshold = lossThreshold
+    self.modifier = modifier
   }
 }

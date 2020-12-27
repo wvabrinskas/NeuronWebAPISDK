@@ -10,22 +10,22 @@ import Foundation
 
 public struct TrainingModel: Codable {
   public var inputs: [Float]
-  public var validation: [Float]
   public var correct: [Float]
   
-  public init(inputs: [Float], validation: [Float] = [], correct: [Float]) {
+  public init(inputs: [Float], correct: [Float]) {
     self.inputs = inputs
-    self.validation = validation
     self.correct = correct
   }
 }
 
 public struct MasterTrainingModel: Codable {
   public var trainingData: [TrainingModel]
+  public var validationData: [TrainingModel]
   public var count: Int
   
-  public init(trainingData: [TrainingModel], count: Int) {
+  public init(trainingData: [TrainingModel], validationData: [TrainingModel] = [], count: Int) {
     self.trainingData = trainingData
     self.count = count
+    self.validationData = validationData
   }
 }
