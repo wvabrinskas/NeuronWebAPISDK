@@ -36,14 +36,16 @@ public struct InitModel: Codable {
   var bias: Float
   var lossFunction: LossFunctionMode
   var lossThreshold: Float
-  var modifier: ModifierMode
+  var modifier: ModifierMode? = nil
+  var epochs: Int
 
   public init(layers: [Layer],
               learningRate: Float,
               bias: Float,
               lossFunction: LossFunctionMode,
               lossThreshold: Float,
-              modifier: ModifierMode) {
+              modifier: ModifierMode? = nil,
+              epochs: Int) {
  
     self.layers = layers
     self.learningRate = learningRate
@@ -51,5 +53,6 @@ public struct InitModel: Codable {
     self.lossFunction = lossFunction
     self.lossThreshold = lossThreshold
     self.modifier = modifier
+    self.epochs = epochs
   }
 }
