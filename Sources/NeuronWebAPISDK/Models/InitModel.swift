@@ -13,7 +13,7 @@ public enum ActivationMode: String, Codable {
 }
 
 public enum LossFunctionMode: String, Codable {
-  case meanSquareLoss
+  case meanSquareLoss, binaryCrossEntropy
 }
 
 public enum ModifierMode: String, Codable {
