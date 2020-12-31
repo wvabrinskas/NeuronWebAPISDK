@@ -20,13 +20,19 @@ public enum ModifierMode: String, Codable {
   case softmax
 }
 
+public enum LayerTypeMode: String, Codable {
+  case input, hidden, output
+}
+
 public struct Layer: Codable {
   public var nodes: Int
   public var activation: ActivationMode
+  public var layer: LayerTypeMode
   
-  public init(nodes: Int, activation: ActivationMode) {
+  public init(nodes: Int, activation: ActivationMode, layer: LayerTypeMode) {
     self.nodes = nodes
     self.activation = activation
+    self.layer = layer
   }
 }
 
