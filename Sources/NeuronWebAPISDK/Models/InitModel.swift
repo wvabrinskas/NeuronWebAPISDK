@@ -9,7 +9,7 @@
 import Foundation
 
 public enum ActivationMode: String, Codable {
-  case reLu, sigmoid, leakyReLu, swish, none
+  case reLu, sigmoid, leakyReLu, swish, tanh, none
 }
 
 public enum LossFunctionMode: String, Codable {
