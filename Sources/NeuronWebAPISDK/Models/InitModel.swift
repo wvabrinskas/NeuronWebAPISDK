@@ -26,10 +26,10 @@ public enum LayerTypeMode: String, Codable {
 
 public struct Layer: Codable {
   public var nodes: Int
-  public var activation: ActivationMode
+  public var activation: ActivationMode = .none
   public var layer: LayerTypeMode
   
-  public init(nodes: Int, activation: ActivationMode, layer: LayerTypeMode) {
+  public init(nodes: Int, activation: ActivationMode = .none, layer: LayerTypeMode) {
     self.nodes = nodes
     self.activation = activation
     self.layer = layer
